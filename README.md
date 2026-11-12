@@ -33,7 +33,8 @@ npm run dev
    ignora reenvios com a mesma chave de idempotência.
 3. O lead vai ao CRM com até 3 tentativas (falhas 5xx, 429, 408 ou timeout).
 4. Se o CRM falhar, o lead é guardado no Redis e o visitante vê a tela de sucesso normalmente.
-   O Vercel Cron chama `/api/leads/reprocess` a cada 15 minutos até o CRM aceitar.
+   O Vercel Cron chama `/api/leads/reprocess` uma vez por dia (12:00 UTC). No plano Pro, dá para
+   aumentar a frequência (ex.: a cada 15 minutos).
 5. Se CRM **e** Redis falharem, o visitante recebe a orientação de enviar pelo WhatsApp e o lead
    completo é registrado no log da função com a etiqueta `[leads] LEAD_NAO_ENTREGUE`.
 6. A tela de sucesso oferece continuar no WhatsApp com mensagem pré-preenchida. Abrir o WhatsApp não
@@ -109,7 +110,7 @@ Os testes de navegador usam o Microsoft Edge instalado (`playwright-core`, sem b
 ## Deploy (Vercel)
 
 1. Importe o repositório na Vercel e configure as variáveis de ambiente de produção.
-2. O `vercel.json` agenda o reprocessamento a cada 15 minutos (requer plano Pro, que também é o exigido
-   para uso comercial).
+2. O `vercel.json` agenda o reprocessamento diário às 12:00 UTC (compatível com o plano Hobby).
+   No Pro, você pode mudar o `schedule` para `*/15 * * * *`.
 3. Após publicar, rode o PageSpeed Insights na URL final e faça um envio real de teste conferindo a
    chegada no CRM.
