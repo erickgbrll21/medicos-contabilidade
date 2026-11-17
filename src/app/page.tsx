@@ -4,6 +4,8 @@ import { Header } from "@/components/layout/Header";
 import { Logo } from "@/components/layout/Logo";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { About } from "@/components/sections/About";
+import { AccountingApp } from "@/components/sections/AccountingApp";
+import { VirtualAddress } from "@/components/sections/VirtualAddress";
 import { Hero } from "@/components/sections/Hero";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { Problem } from "@/components/sections/Problem";
@@ -47,7 +49,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${siteConfig.url}/#pagina`,
       url: siteConfig.url,
-      name: "Contabilidade para Médicos | BC Consultores",
+      name: "Contabilidade para Médicos | Fechou Tributo",
       inLanguage: "pt-BR",
       about: { "@id": `${siteConfig.url}/#empresa` },
     },
@@ -66,6 +68,8 @@ export default function Home() {
         <Process />
         <Segmentation />
         <About />
+        <VirtualAddress />
+        <AccountingApp />
         <LeadForm />
       </main>
       <Footer />

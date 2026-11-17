@@ -1,5 +1,7 @@
 "use client";
 
+import { readConsent } from "@/lib/consent";
+
 export type AnalyticsEvent =
   | "page_view"
   | "view_services"
@@ -44,6 +46,7 @@ function alreadySent(key: string) {
  */
 export function track(event: AnalyticsEvent, params: Params = {}, dedupeId?: string) {
   if (typeof window === "undefined") return;
+  if (readConsent() !== "accepted") return;
   if (ONCE_PER_SESSION.includes(event) && alreadySent(`bc_evt_${event}`)) return;
   if (dedupeId && alreadySent(`bc_evt_${event}_${dedupeId}`)) return;
 

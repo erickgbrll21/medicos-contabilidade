@@ -2,8 +2,8 @@
 // Qualquer alteração de contato ou números deve ser feita somente aqui.
 
 export const siteConfig = {
-  name: "BC Consultores",
-  legalName: "Botelho e Castro Consultores",
+  name: "Fechou Tributo",
+  legalName: "Fechou Tributo",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, ""),
   officialSite: "https://bcconsultores.adv.br",
   officialPrivacyPolicy: "https://bcconsultores.adv.br/politica-de-privacidade",
@@ -17,10 +17,11 @@ export const siteConfig = {
     email: "contabilidade@bcconsultores.adv.br",
     hours: "Segunda a sexta, das 07:30 às 18:00",
     address: {
-      street: "Rua Buenos Aires, 10 – 12º andar",
-      district: "Carmo",
-      city: "Belo Horizonte",
-      state: "MG",
+      street:
+        "Travessa Quintino Bocaiuva, 2301 — Loja 02 — Ed. Rogelio Fernandez Business Center, Andar 01, Sala 107",
+      district: "Cremação",
+      city: "Belém",
+      state: "PA",
       country: "BR",
     },
   },
@@ -36,6 +37,7 @@ export const siteConfig = {
 export const navLinks = [
   { href: "#planos", label: "Planos" },
   { href: "#servicos", label: "Serviços" },
+  { href: "#app", label: "App" },
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#sobre", label: "Sobre" },
   { href: "#contato", label: "Contato" },

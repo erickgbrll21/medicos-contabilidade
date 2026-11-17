@@ -28,27 +28,38 @@ export function Problem() {
         </div>
 
         <div className="lg:col-span-7">
-          <ul className="border-b border-line">
+          <ul className="grid gap-3">
             {situations.map((text, i) => (
-              <Reveal as="li" key={text} className="flex items-start gap-5 border-t border-line py-6 sm:py-7">
-                <span aria-hidden="true" className="mt-[0.4em] w-6 shrink-0 text-sm font-medium tabular-nums text-accent">
+              <Reveal
+                as="li"
+                key={text}
+                className="group flex items-center gap-5 rounded-3xl border border-transparent bg-mist p-5 transition-[background-color,border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-ink/5 hover:bg-white hover:shadow-[0_18px_40px_-24px_rgb(0_22_53/0.25)] sm:p-6"
+              >
+                <span
+                  aria-hidden="true"
+                  className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white text-sm font-semibold tabular-nums text-accent shadow-[0_1px_2px_rgb(0_22_53/0.06)] transition-colors duration-300 group-hover:bg-accent group-hover:text-ink"
+                >
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="font-display text-[1.3125rem] leading-snug tracking-[-0.01em] text-graphite sm:text-[1.5rem]">
+                <span className="font-display text-[1.1875rem] leading-snug tracking-[-0.01em] text-graphite sm:text-[1.375rem]">
                   {text}
                 </span>
               </Reveal>
             ))}
           </ul>
 
-          <Reveal className="mt-12 sm:mt-14">
-            <p className="font-display max-w-[30ch] text-[1.5rem] leading-snug tracking-[-0.015em] sm:text-[1.75rem]">
+          <Reveal className="surface-dark relative mt-6 overflow-hidden rounded-[2rem] p-7 sm:p-10">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -top-24 -right-24 size-72 rounded-full bg-accent/30 blur-[90px]"
+            />
+            <p className="font-display relative max-w-[30ch] text-[1.5rem] leading-snug tracking-[-0.015em] sm:text-[1.75rem]">
               Uma contabilidade estratégica pode fazer a diferença na rentabilidade da sua atividade médica.
             </p>
             <CtaLink
               trackingId="problema"
               prefill={{ objetivo: "reduzir_impostos" }}
-              className={buttonClasses("primary", "lg", "mt-8 w-full sm:w-auto")}
+              className={buttonClasses("primary", "lg", "relative mt-8 w-full sm:w-auto")}
             >
               Quero analisar minha situação tributária
               <ArrowRight className="size-[1.125rem] transition-transform duration-200 group-hover/btn:translate-x-0.5" strokeWidth={1.75} aria-hidden="true" />

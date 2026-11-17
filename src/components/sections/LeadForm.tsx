@@ -25,10 +25,12 @@ export function LeadForm() {
             melhores alternativas.
           </p>
 
-          <ol className="mt-10 space-y-4 border-t border-ink/15 pt-8">
-            {nextSteps.map((step) => (
-              <li key={step} className="flex gap-4 text-[1rem] leading-relaxed text-graphite">
-                <span aria-hidden="true" className="mt-[0.55em] size-2.5 shrink-0 rounded-tl-[3px] bg-accent" />
+          <ol className="mt-10 space-y-3">
+            {nextSteps.map((step, i) => (
+              <li key={step} className="flex items-center gap-4 rounded-2xl bg-white p-4 text-[1rem] leading-relaxed text-graphite shadow-[0_1px_2px_rgb(0_22_53/0.04)]">
+                <span aria-hidden="true" className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-accent text-sm font-semibold text-ink tabular-nums">
+                  {i + 1}
+                </span>
                 {step}
               </li>
             ))}
@@ -56,7 +58,7 @@ export function LeadForm() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="rounded-tr-[var(--radius-brand)] border border-line bg-white p-6 sm:p-10">
+          <div className="card-soft rounded-[2rem] p-6 shadow-[0_40px_80px_-40px_rgb(0_22_53/0.3)] sm:p-10">
             <ContactForm />
           </div>
         </div>

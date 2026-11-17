@@ -7,6 +7,13 @@
       "skillPath": ".agents/skills/impeccable/SKILL.md",
       "computedHash": "86e265bf3df79c65215f7244d71892ca278370d56dec47a8cc15e8373db3f714"
     },
+    "lgpd": {
+      "source": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+      "commit": "c4289cbb9c33b3536ae86a9701c6723f5090863d",
+      "sourceType": "github",
+      "skillPath": "plugins/lgpd/skills/lgpd/SKILL.md",
+      "computedHash": "afbfd12da7fc587cd63ac4246d11c93e4b2eda8244a86563fedac970be7d52b2"
+    },
     "ponytail": {
       "source": "DietrichGebert/ponytail",
       "sourceType": "github",

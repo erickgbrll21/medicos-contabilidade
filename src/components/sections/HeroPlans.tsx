@@ -24,14 +24,14 @@ function PlanCard({ plan }: { plan: Plan }) {
   return (
     <li
       className={cn(
-        "group relative flex flex-col rounded-2xl bg-white p-5 text-ink shadow-[0_24px_48px_-24px_rgb(0_0_0/0.7)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_28px_56px_-20px_rgb(100_175_7/0.5)] sm:p-6",
-        featured && "ring-2 ring-accent",
+        "group relative flex flex-col rounded-[1.75rem] bg-white p-5 text-ink shadow-[0_24px_48px_-24px_rgb(0_0_0/0.7)] transition-[transform,box-shadow] duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-1.5 hover:shadow-[0_32px_64px_-24px_rgb(100_175_7/0.55)] sm:p-6",
+        featured && "ring-2 ring-accent ring-offset-4 ring-offset-ink",
       )}
     >
       <div className="flex items-center justify-between gap-4">
         <span
           aria-hidden="true"
-          className="font-display flex h-11 w-10 shrink-0 -skew-x-6 items-center justify-center rounded-md bg-ink text-xl font-medium text-white italic"
+          className="font-display flex size-11 shrink-0 items-center justify-center rounded-2xl bg-ink text-xl font-medium text-white"
         >
           {plan.number}
         </span>
@@ -42,7 +42,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         <CtaLink
           trackingId={`hero_plano_${plan.id}`}
           prefill={{ objetivo: plan.objetivo, possuiCnpj: plan.possuiCnpj }}
-          className="rounded-2xl after:absolute after:inset-0 after:rounded-2xl after:content-[''] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-accent"
+          className="rounded-[1.75rem] after:absolute after:inset-0 after:rounded-[1.75rem] after:content-[''] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-accent"
         >
           {plan.title}
         </CtaLink>
@@ -61,12 +61,12 @@ function PlanCard({ plan }: { plan: Plan }) {
         <p className="mt-1.5 text-sm text-muted">({plan.note})</p>
       )}
 
-      <div className="relative mt-5 overflow-hidden rounded-xl bg-ink px-5 py-4 text-white lg:mt-auto">
+      <div className="relative mt-5 overflow-hidden rounded-2xl bg-ink px-5 py-4 text-white lg:mt-auto">
         <span
           aria-hidden="true"
-          className="absolute right-0 bottom-0 size-7 bg-accent [clip-path:polygon(100%_0,100%_100%,0_100%)]"
+          className="pointer-events-none absolute -right-10 -bottom-12 size-32 rounded-full bg-accent/40 opacity-70 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
         />
-        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <div className="relative flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
           <p className="flex items-baseline gap-1 whitespace-nowrap">
             <span className="text-base font-medium">R$</span>
             <span className="font-display text-[2.5rem] leading-none font-medium tracking-[-0.03em] tabular-nums">
@@ -75,12 +75,12 @@ function PlanCard({ plan }: { plan: Plan }) {
             <span className="text-sm text-white/75">{plan.period}</span>
           </p>
           {plan.badge && (
-            <span className="rounded-md bg-accent px-3 py-1 text-sm font-semibold text-ink italic">{plan.badge}</span>
+            <span className="rounded-full bg-accent px-3 py-1 text-sm font-semibold text-ink">{plan.badge}</span>
           )}
         </div>
         <span
           aria-hidden="true"
-          className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent-bright transition-colors group-hover:text-white"
+          className="relative mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent-bright transition-colors group-hover:text-white"
         >
           Quero este plano
           <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" strokeWidth={2} />
@@ -102,7 +102,7 @@ export function HeroPlans({ className }: { className?: string }) {
           <PlanCard key={plan.id} plan={plan} />
         ))}
       </ol>
-      <p className="mx-auto mt-6 flex w-fit items-center gap-2.5 rounded-full border border-accent/60 bg-white/5 px-5 py-2.5 text-[0.9375rem] font-medium text-white">
+      <p className="mx-auto mt-6 flex w-fit items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.07] px-5 py-2.5 backdrop-blur-md text-[0.9375rem] font-medium text-white">
         <CalendarCheck className="size-5 text-accent-bright" strokeWidth={1.75} aria-hidden="true" />
         {offerConfig.footnote.lead}
         <span className="text-accent-bright">{offerConfig.footnote.highlight}</span>

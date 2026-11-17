@@ -26,7 +26,7 @@ const options: Option[] = [
     benefits: ["Abertura de empresa", "Orientação tributária", "Estruturação societária", "Assessoria contábil"],
     cta: "Quero abrir meu CNPJ",
     prefill: { possuiCnpj: "nao", objetivo: "abrir_cnpj" },
-    corner: "rounded-tl-[var(--radius-brand)]",
+    corner: "rounded-tl-[3rem]",
   },
   {
     id: "com_cnpj",
@@ -41,13 +41,13 @@ const options: Option[] = [
     ],
     cta: "Quero analisar minha empresa",
     prefill: { possuiCnpj: "sim", objetivo: "reduzir_impostos" },
-    corner: "rounded-br-[var(--radius-brand)]",
+    corner: "rounded-br-[3rem]",
   },
 ];
 
 export function Segmentation() {
   return (
-    <section aria-labelledby="situacao-title" className="bg-white py-24 sm:py-32">
+    <section aria-labelledby="situacao-title" className="bg-mist py-24 sm:py-32">
       <div className="container-page">
         <h2 id="situacao-title" className="text-section max-w-[20ch]">
           Qual situação representa melhor o seu momento profissional?
@@ -58,11 +58,16 @@ export function Segmentation() {
             <Reveal key={option.id} className="h-full">
               <article
                 className={cn(
-                  "group flex h-full flex-col border border-line bg-white p-7 transition-[border-color,box-shadow] duration-300 hover:border-ink hover:shadow-[0_24px_48px_-28px_rgb(16_16_16/0.35)] sm:p-10",
+                  "card-soft group relative flex h-full flex-col overflow-hidden p-7 transition-[transform,box-shadow] duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-1 hover:shadow-[0_36px_72px_-36px_rgb(0_22_53/0.4)] sm:p-10",
                   option.corner,
                 )}
               >
-                <p className="inline-flex w-fit items-center rounded-full border border-line px-3 py-1 text-[0.8125rem] font-medium text-graphite">
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -top-24 -right-24 size-64 rounded-full bg-accent/10 blur-3xl transition-colors duration-500 group-hover:bg-accent/25"
+                />
+                <p className="relative inline-flex w-fit items-center gap-2 rounded-full bg-mist px-3.5 py-1.5 text-[0.8125rem] font-medium text-graphite">
+                  <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
                   {option.status}
                 </p>
                 <h3 className="mt-7 max-w-[18ch] text-[1.75rem] leading-[1.12] tracking-[-0.02em] sm:text-[2.125rem]">
@@ -70,10 +75,12 @@ export function Segmentation() {
                 </h3>
                 <p className="mt-4 max-w-[34rem] text-[1.0625rem] leading-relaxed text-muted">{option.text}</p>
 
-                <ul className="mt-8 grid gap-3 border-t border-line pt-7 sm:grid-cols-2">
+                <ul className="mt-8 grid gap-3 rounded-2xl bg-mist p-5 sm:grid-cols-2">
                   {option.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-3 text-[0.9375rem] text-graphite">
-                      <Check className="mt-0.5 size-4 shrink-0" strokeWidth={2} aria-hidden="true" />
+                    <li key={benefit} className="flex items-center gap-3 text-[0.9375rem] text-graphite">
+                      <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-ink">
+                        <Check className="size-3.5" strokeWidth={2.75} aria-hidden="true" />
+                      </span>
                       {benefit}
                     </li>
                   ))}

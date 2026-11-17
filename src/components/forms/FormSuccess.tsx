@@ -16,14 +16,14 @@ export function FormSuccess({ nome, whatsappMessage }: { nome: string; whatsappM
 
   return (
     <div className="py-4">
-      <span className="flex size-12 items-center justify-center rounded-tl-[0.75rem] bg-ink text-white">
+      <span className="flex size-12 items-center justify-center rounded-2xl bg-ink text-white">
         <Check className="size-6" strokeWidth={2} aria-hidden="true" />
       </span>
       <h3 ref={headingRef} tabIndex={-1} className="mt-8 text-[2rem] leading-tight tracking-[-0.02em] focus:outline-none">
         Recebemos seus dados, {firstName(nome)}.
       </h3>
       <p className="mt-4 max-w-[34rem] text-[1.0625rem] leading-relaxed text-muted">
-        Um especialista da BC Consultores vai entrar em contato pelo WhatsApp ou e-mail informados em até 24 horas
+        Um especialista da Fechou Tributo vai entrar em contato pelo WhatsApp ou e-mail informados em até 24 horas
         úteis.
       </p>
 

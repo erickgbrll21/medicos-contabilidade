@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const control =
-  "block w-full rounded-[3px] border bg-white px-4 text-base text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-stone/80 hover:border-ink/40 focus:border-ink focus:shadow-[0_0_0_1px_var(--color-ink)] focus:outline-none aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:focus:shadow-[0_0_0_1px_#b42318]";
+  "block w-full rounded-xl border bg-mist/60 px-4 text-base text-ink transition-[border-color,box-shadow,background-color] duration-200 placeholder:text-stone/80 hover:border-ink/30 focus:border-accent focus:bg-white focus:shadow-[0_0_0_4px_rgb(100_175_7/0.15)] focus:outline-none aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:focus:shadow-[0_0_0_1px_#b42318]";
 
 type FieldProps = {
   id: string;

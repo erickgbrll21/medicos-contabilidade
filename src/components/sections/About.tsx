@@ -9,7 +9,7 @@ export function About() {
     <section id="sobre" aria-labelledby="sobre-title" className="bg-white py-24 sm:py-32">
       <div className="container-page grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-10">
         <Reveal className="lg:col-span-6">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-tr-[var(--radius-brand)] bg-mist lg:aspect-[5/6]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-mist shadow-[0_40px_80px_-40px_rgb(0_22_53/0.45)] lg:aspect-[5/6]">
             <Image
               src="/images/escritorio-reuniao.webp"
               alt="Sala de reuniões do Grupo Botelho e Castro em Belo Horizonte"
@@ -26,24 +26,24 @@ export function About() {
           </h2>
           <div className="mt-7 space-y-5 text-[1.0625rem] leading-relaxed text-muted">
             <p>
-              Com sede em Belo Horizonte e atuação em todo o Brasil, a{" "}
+              Com sede em Belém e atuação em todo o Brasil, a{" "}
               <strong className="font-medium text-ink">{siteConfig.legalName}</strong> é referência em assessoria
               contábil.
             </p>
             <p>
-              Fazemos parte do Grupo Botelho e Castro, que reúne as frentes contábil, empresarial e consultiva da BC
-              Consultores e a atuação jurídica da BC Advogados. Uma estrutura completa para as decisões da sua
+              Fazemos parte do Grupo Botelho e Castro, que reúne as frentes contábil, empresarial e consultiva da
+              Fechou Tributo e a atuação jurídica da BC Advogados. Uma estrutura completa para as decisões da sua
               carreira.
             </p>
             <p>Atendimento humanizado, sem robôs, com suporte ilimitado e personalizado.</p>
           </div>
 
-          <dl className="mt-10 grid grid-cols-2 border-t border-line">
+          <dl className="mt-10 grid grid-cols-2 gap-3">
             {siteConfig.stats.map((stat) => (
-              <div key={stat.label} className="border-b border-line py-6 pr-4">
+              <div key={stat.label} className="rounded-3xl bg-mist p-5 sm:p-6">
                 <dt className="sr-only">{stat.label}</dt>
                 <dd>
-                  <span className="font-display block text-[2.5rem] leading-none font-light tracking-[-0.03em] tabular-nums">
+                  <span className="font-display block text-[2.5rem] leading-none font-normal tracking-[-0.03em] text-ink tabular-nums">
                     {stat.value}
                   </span>
                   <span className="mt-2 block text-[0.9375rem] text-muted">{stat.label}</span>

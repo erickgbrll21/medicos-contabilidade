@@ -50,22 +50,36 @@ export function ProcessTimeline({ steps }: { steps: Step[] }) {
         )}
       </div>
 
-      <ol className="grid gap-12 lg:grid-cols-4 lg:gap-8">
+      <ol className="grid gap-6 lg:grid-cols-4 lg:gap-5">
         {steps.map((step, i) => (
-          <li key={step.title} className="relative pl-10 lg:pl-0 lg:pt-12 lg:pr-4">
+          <li key={step.title} className="relative pl-10 lg:pl-0 lg:pt-12">
             <span
               aria-hidden="true"
               className={cn(
-                "absolute top-0 left-0 size-[15px] rounded-tl-[5px] border transition-colors duration-500",
-                isReached(i) ? "border-accent-bright bg-accent-bright" : "border-white/40 bg-void",
+                "absolute top-0 left-0 size-[15px] rounded-full border transition-[background-color,border-color,box-shadow] duration-500",
+                isReached(i)
+                  ? "border-accent-bright bg-accent-bright shadow-[0_0_0_6px_rgb(149_204_28/0.18)]"
+                  : "border-white/40 bg-ink",
               )}
             />
-            <p className="font-display text-sm tracking-[0.04em] text-white/50 tabular-nums">
-              <span className="sr-only">Etapa </span>
-              {String(i + 1).padStart(2, "0")}
-            </p>
-            <h3 className="mt-3 text-[1.5rem] leading-tight tracking-[-0.015em]">{step.title}</h3>
-            <p className="mt-3 max-w-[32ch] text-[1rem] leading-relaxed text-white/65">{step.text}</p>
+            <div
+              className={cn(
+                "h-full rounded-3xl border p-6 backdrop-blur-sm transition-[background-color,border-color] duration-500",
+                isReached(i) ? "border-white/15 bg-white/[0.06]" : "border-white/[0.07] bg-white/[0.02]",
+              )}
+            >
+              <p
+                className={cn(
+                  "font-display inline-flex rounded-full px-3 py-1 text-sm tracking-[0.04em] tabular-nums transition-colors duration-500",
+                  isReached(i) ? "bg-accent-bright text-ink" : "bg-white/10 text-white/60",
+                )}
+              >
+                <span className="sr-only">Etapa </span>
+                {String(i + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-5 text-[1.5rem] leading-tight tracking-[-0.015em]">{step.title}</h3>
+              <p className="mt-3 max-w-[32ch] text-[1rem] leading-relaxed text-white/65">{step.text}</p>
+            </div>
           </li>
         ))}
       </ol>

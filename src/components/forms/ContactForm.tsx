@@ -8,6 +8,7 @@ import { Button, buttonClasses } from "@/components/ui/Button";
 import { Field, FieldError, Input, Select, Textarea, describedBy } from "@/components/ui/Field";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import { siteConfig } from "@/config/site";
 import { getAttribution } from "@/lib/analytics/attribution";
 import { track } from "@/lib/analytics/events";
 import { PREFILL_EVENT, type LeadPrefill } from "@/lib/lead-prefill";
@@ -236,7 +237,7 @@ export function ContactForm() {
           {(["sim", "nao"] as const).map((value) => (
             <label
               key={value}
-              className="relative flex h-[3.25rem] cursor-pointer items-center justify-center rounded-[3px] border border-line text-base text-graphite transition-colors duration-150 hover:border-ink/40 has-[:checked]:border-ink has-[:checked]:bg-ink has-[:checked]:text-white has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-3 has-[:focus-visible]:outline-ink"
+              className="relative flex h-[3.25rem] cursor-pointer items-center justify-center rounded-xl border border-line bg-mist/60 text-base text-graphite transition-colors duration-200 hover:border-ink/30 has-[:checked]:border-ink has-[:checked]:bg-ink has-[:checked]:text-white has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-3 has-[:focus-visible]:outline-ink"
             >
               <input
                 type="radio"
@@ -311,8 +312,9 @@ export function ContactForm() {
             {...register("consentimento")}
           />
           <span>
-            Autorizo a BC Consultores a utilizar meus dados para entrar em contato e apresentar informações sobre
-            seus serviços, conforme a{" "}
+            Autorizo a Fechou Tributo a usar estes dados só para entrar em contato e apresentar os serviços de
+            contabilidade. Posso revogar essa autorização a qualquer momento, sem custo, pelo e-mail{" "}
+            {siteConfig.contact.email}, conforme a{" "}
             <a href="/politica-de-privacidade" target="_blank" className="font-medium text-ink underline">
               Política de Privacidade
               <span className="sr-only"> (abre em uma nova aba)</span>
@@ -324,7 +326,7 @@ export function ContactForm() {
       </div>
 
       {outcome?.kind === "error" && (
-        <div role="alert" className="rounded-[3px] border border-[#b42318]/30 bg-[#fef3f2] p-5 sm:col-span-2">
+        <div role="alert" className="rounded-2xl border border-[#b42318]/30 bg-[#fef3f2] p-5 sm:col-span-2">
           <p className="text-[0.9375rem] leading-relaxed text-[#7a271a]">{outcome.text}</p>
           <WhatsAppLink
             trackingId="formulario_falha"

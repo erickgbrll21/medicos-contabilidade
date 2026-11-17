@@ -6,58 +6,56 @@ import { Footer } from "@/components/layout/Footer";
 import { Logo } from "@/components/layout/Logo";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade | BC Consultores",
-  description: "Como a BC Consultores trata os dados enviados pelo formulário da página de contabilidade para médicos.",
+  title: "Política de Privacidade | Fechou Tributo",
+  description: "Como a Fechou Tributo trata os dados enviados pelo formulário da página de contabilidade para médicos.",
   alternates: { canonical: "/politica-de-privacidade" },
 };
 
+const { contact } = siteConfig;
+
 const sections = [
   {
-    title: "Quem trata os seus dados",
+    title: "Controlador e canal do titular",
     body: [
-      `Os dados enviados nesta página são tratados pela ${siteConfig.legalName} (BC Consultores), com sede na ${siteConfig.contact.address.street}, ${siteConfig.contact.address.district}, ${siteConfig.contact.address.city} – ${siteConfig.contact.address.state}.`,
+      `O controlador dos dados desta página é a ${siteConfig.legalName}, com sede na ${contact.address.street}, ${contact.address.district}, ${contact.address.city} – ${contact.address.state}.`,
+      `O canal do encarregado e dos titulares é o e-mail ${contact.email} e o telefone ${contact.phoneDisplay}, em horário comercial (${contact.hours}). Pedidos de acesso completo são respondidos em até 15 dias.`,
     ],
   },
   {
-    title: "Quais dados coletamos",
+    title: "Quais dados e para quê",
     body: [
-      "Pelo formulário: nome, WhatsApp, e-mail, especialidade médica, cidade e estado, se você possui CNPJ, seu principal objetivo e, se você quiser informar, a faixa de faturamento mensal e observações.",
-      "Automaticamente: a página de origem, a data e o horário do envio e os parâmetros de campanha presentes no endereço (por exemplo, utm_source, utm_campaign, gclid e fbclid), que ficam guardados no seu navegador por até 30 dias.",
-      "Não solicitamos CPF, documentos pessoais nem informações clínicas de pacientes. Pedimos que você não as inclua no campo de observações.",
-    ],
-  },
-  {
-    title: "Para que usamos",
-    body: [
-      "Para entrar em contato com você, entender sua situação contábil e tributária e apresentar informações sobre nossos serviços.",
-      "Para medir o desempenho das nossas campanhas e desta página.",
+      "Formulário, com a sua autorização: nome, WhatsApp, e-mail, especialidade, cidade, estado, se você possui CNPJ e o seu objetivo. Faturamento e observações só entram se você quiser informar. A finalidade é o contato comercial e a preparação de uma proposta de contabilidade.",
+      "Cookies de medição, só se você aceitar: página visitada, origem da campanha (por exemplo, utm_source, utm_campaign, gclid e fbclid) e eventos da página, guardados no navegador por até 30 dias. A finalidade é medir o desempenho desta página.",
+      "Não pedimos CPF, documentos nem dados de saúde de pacientes. Especialidade médica, sozinha, não é dado de saúde. Não use o campo de observações para dados clínicos. Esta página não se destina a crianças.",
     ],
   },
   {
     title: "Base legal",
     body: [
-      "O tratamento é feito com base no seu consentimento (art. 7º, I, da Lei nº 13.709/2018 – LGPD), registrado quando você marca a autorização no formulário, e para procedimentos preliminares relacionados a um eventual contrato a seu pedido (art. 7º, V).",
+      "O contato comercial usa o seu consentimento (art. 7º, I, da Lei nº 13.709/2018) e, quando você pede uma proposta, os procedimentos preliminares do contrato (art. 7º, V).",
+      "A medição de visitas usa um consentimento separado, no aviso de cookies. Ele é livre, específico e pode ser recusado sem impedir o uso do site. Caixa marcada de antemão não é usada.",
+      "Não há decisão automatizada nem perfilamento sobre você (art. 20).",
     ],
   },
   {
-    title: "Com quem compartilhamos",
+    title: "Com quem compartilhamos e transferência internacional",
     body: [
-      "Com o sistema de gestão de relacionamento (CRM) usado pela nossa equipe comercial, que armazena o seu contato.",
-      "Com ferramentas de medição de audiência, como Google Analytics e Meta Pixel, quando ativas nesta página. Essas ferramentas recebem dados de navegação e dos eventos da página, não o conteúdo do formulário.",
-      "Se você optar por continuar a conversa pelo WhatsApp, a mensagem é enviada por você diretamente pelo aplicativo, sujeito às políticas do WhatsApp.",
+      "O formulário vai para o CRM da equipe comercial, que atua como operador e só trata os dados para o atendimento do seu pedido.",
+      "Se você aceitar os cookies, Google Analytics e Meta Pixel podem tratar dados de navegação fora do Brasil, inclusive nos Estados Unidos. Essa transferência internacional se apoia no consentimento específico do aviso (art. 33). O conteúdo do formulário não é enviado a essas ferramentas.",
+      "Se você seguir a conversa pelo WhatsApp, a mensagem sai do seu próprio aplicativo, sujeito às regras do WhatsApp.",
     ],
   },
   {
     title: "Por quanto tempo guardamos",
     body: [
-      "Pelo tempo necessário para o atendimento da sua solicitação e para o cumprimento de obrigações legais. Você pode pedir a exclusão a qualquer momento.",
+      "Os dados do formulário ficam pelo tempo do atendimento e das obrigações legais aplicáveis. A origem da campanha fica no navegador por até 30 dias. A escolha do aviso de cookies permanece até você alterá-la em Preferências de cookies, no rodapé.",
     ],
   },
   {
     title: "Seus direitos",
     body: [
-      "Você pode solicitar confirmação do tratamento, acesso, correção, anonimização, portabilidade, exclusão dos dados e revogação do consentimento, nos termos do art. 18 da LGPD.",
-      `Para exercer esses direitos, escreva para ${siteConfig.contact.email} ou ligue para ${siteConfig.contact.phoneDisplay}.`,
+      "Você pode pedir confirmação do tratamento, acesso, correção, anonimização, bloqueio ou eliminação, portabilidade, informação sobre com quem compartilhamos, informação sobre a possibilidade de não consentir e revogação do consentimento (art. 18). A revogação é gratuita e não prejudica o que já foi tratado de forma lícita.",
+      `Escreva para ${contact.email} ou ligue para ${contact.phoneDisplay}. Se não for possível atender de imediato, a resposta indica o motivo (art. 18, § 4º).`,
     ],
   },
 ];

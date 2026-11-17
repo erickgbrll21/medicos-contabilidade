@@ -46,8 +46,10 @@ export function Header({ logo }: { logo: React.ReactNode }) {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b bg-white text-ink transition-[border-color,box-shadow] duration-300",
-        scrolled || open ? "border-line shadow-[0_8px_24px_-18px_rgb(0_22_53/0.45)]" : "border-transparent",
+        "fixed inset-x-0 top-0 z-50 border-b text-ink transition-[border-color,box-shadow,background-color] duration-300",
+        scrolled || open
+          ? "border-ink/5 bg-white/80 shadow-[0_10px_30px_-20px_rgb(0_22_53/0.35)] backdrop-blur-xl backdrop-saturate-150"
+          : "border-transparent bg-white",
       )}
     >
       <div className="container-page flex h-16 items-center justify-between gap-6 lg:h-[4.5rem]">
@@ -56,12 +58,12 @@ export function Header({ logo }: { logo: React.ReactNode }) {
         </a>
 
         <nav aria-label="Principal" className="hidden lg:block">
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-1">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-[0.9375rem] text-ink/70 transition-colors duration-200 hover:text-ink"
+                  className="rounded-full px-3.5 py-2 text-[0.9375rem] font-medium text-ink/65 transition-colors duration-200 hover:bg-mist hover:text-ink"
                 >
                   {link.label}
                 </a>
@@ -79,7 +81,7 @@ export function Header({ logo }: { logo: React.ReactNode }) {
           <button
             ref={toggleRef}
             type="button"
-            className="-mr-2 inline-flex size-12 items-center justify-center rounded-sm text-ink lg:hidden"
+            className="-mr-2 inline-flex size-12 items-center justify-center rounded-full text-ink transition-colors hover:bg-mist lg:hidden"
             aria-expanded={open}
             aria-controls="menu-mobile"
             aria-label={open ? "Fechar menu" : "Abrir menu"}

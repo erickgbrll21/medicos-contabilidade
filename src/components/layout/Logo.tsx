@@ -17,9 +17,9 @@ export function Logo({
       alt="Fechou Tributo — Contabilidade sem complicação"
       width={1024}
       height={340}
-      sizes="240px"
+      sizes="280px"
       preload={preload}
-      className={cn("h-11 w-auto sm:h-12", className)}
+      className={cn("h-12 w-auto sm:h-14", className)}
     />
   );
 }

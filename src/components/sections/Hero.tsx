@@ -14,22 +14,26 @@ export function Hero() {
     <section id="inicio" aria-labelledby="hero-title" className="surface-dark bg-ink relative overflow-hidden pt-16 lg:pt-[4.5rem]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 -right-40 size-[32rem] rounded-full bg-accent/15 blur-3xl"
+        className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_30%_30%,black,transparent)]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 h-40 w-72 bg-accent/80 [clip-path:polygon(0_35%,100%_100%,0_100%)]"
+        className="pointer-events-none absolute -top-40 -right-40 size-[36rem] rounded-full bg-accent/20 blur-[120px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-32 -left-32 size-[28rem] rounded-full bg-[#1d4ed8]/25 blur-[120px]"
       />
 
       <div className="container-page relative pb-14 sm:pb-20">
         <div className="grid lg:grid-cols-12 lg:items-center lg:gap-10">
           <div className="relative z-10 pt-10 sm:pt-14 lg:col-span-7 lg:pt-12 lg:pb-32">
             <ul className="animate-rise flex flex-wrap gap-2.5" aria-label="Destaques">
-              <li className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-sm font-medium">
+              <li className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-4 py-2 text-sm font-medium backdrop-blur-md">
                 <Rocket className="size-4 text-accent-bright" strokeWidth={1.75} aria-hidden="true" />
                 {offerConfig.eyebrow}
               </li>
-              <li className="inline-flex items-center gap-2 rounded-full bg-accent px-3.5 py-1.5 text-sm font-semibold text-ink">
+              <li className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-ink shadow-[0_8px_24px_-10px_rgb(100_175_7/0.8)]">
                 <Stethoscope className="size-4" strokeWidth={2} aria-hidden="true" />
                 {offerConfig.highlight}
               </li>
@@ -40,7 +44,11 @@ export function Hero() {
               className="animate-rise mt-7 max-w-[15ch] text-[clamp(2.375rem,1.6rem+3vw,4.25rem)] leading-[1.03] font-light tracking-[-0.03em]"
               style={delay(100)}
             >
-              A contabilidade feita para <span className="font-normal text-accent-bright">médicos</span>, sem
+              A contabilidade feita para{" "}
+              <span className="bg-gradient-to-r from-accent-bright to-[#c8f560] bg-clip-text font-normal text-transparent">
+                médicos
+              </span>
+              , sem
               complicação.
             </h1>
             <p className="text-lead animate-rise mt-6 max-w-[36rem] text-white/75" style={delay(180)}>
@@ -77,12 +85,6 @@ export function Hero() {
               />
               <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink to-transparent lg:hidden" />
             </div>
-            <figcaption className="absolute top-5 left-0 inline-flex items-center gap-2.5 rounded-r-full bg-white py-2.5 pr-5 pl-4 text-sm font-semibold text-ink shadow-[0_12px_30px_-12px_rgb(0_0_0/0.6)] lg:top-16 lg:-left-6 lg:rounded-full">
-              <span className="flex size-8 items-center justify-center rounded-full bg-accent">
-                <Stethoscope className="size-4 text-ink" strokeWidth={2} aria-hidden="true" />
-              </span>
-              Contabilidade 100% focada em médicos
-            </figcaption>
           </figure>
         </div>
 

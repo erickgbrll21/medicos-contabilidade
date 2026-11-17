@@ -19,7 +19,7 @@ export function WhatsAppButton() {
   return (
     <WhatsAppLink
       trackingId="flutuante"
-      aria-label="Conversar com a BC Consultores no WhatsApp"
+      aria-label="Conversar com a Fechou Tributo no WhatsApp"
       tabIndex={visible ? 0 : -1}
       aria-hidden={!visible}
       className={cn(
