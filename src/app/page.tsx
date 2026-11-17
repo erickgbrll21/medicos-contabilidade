@@ -3,7 +3,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Logo } from "@/components/layout/Logo";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-import { About } from "@/components/sections/About";
 import { AccountingApp } from "@/components/sections/AccountingApp";
 import { VirtualAddress } from "@/components/sections/VirtualAddress";
 import { Hero } from "@/components/sections/Hero";
@@ -24,7 +23,6 @@ const jsonLd = {
       name: siteConfig.legalName,
       alternateName: siteConfig.name,
       url: siteConfig.url,
-      sameAs: [siteConfig.officialSite],
       logo: `${siteConfig.url}/icon.png`,
       image: `${siteConfig.url}/images/hero-medico.webp`,
       telephone: "+55-31-3295-0497",
@@ -67,7 +65,6 @@ export default function Home() {
         <Services />
         <Process />
         <Segmentation />
-        <About />
         <VirtualAddress />
         <AccountingApp />
         <LeadForm />

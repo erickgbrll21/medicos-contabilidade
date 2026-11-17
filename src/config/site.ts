@@ -1,14 +1,9 @@
-// Dados institucionais extraídos de https://bcconsultores.adv.br.
 // Qualquer alteração de contato ou números deve ser feita somente aqui.
 
 export const siteConfig = {
   name: "Fechou Tributo",
   legalName: "Fechou Tributo",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, ""),
-  officialSite: "https://bcconsultores.adv.br",
-  officialPrivacyPolicy: "https://bcconsultores.adv.br/politica-de-privacidade",
-  officialStructure: "https://bcconsultores.adv.br/#estrutura",
-  lawFirmSite: "https://www.bcadvogados.adv.br/",
   leadSource: "Landing Page — Contabilidade para Médicos",
 
   contact: {
@@ -27,11 +22,6 @@ export const siteConfig = {
   },
 
   whatsappNumber: (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5531985614005").replace(/\D/g, ""),
-
-  stats: [
-    { value: "+200", label: "clientes ativos" },
-    { value: "+15", label: "anos de experiência" },
-  ],
 } as const;
 
 export const navLinks = [
@@ -39,6 +29,5 @@ export const navLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#app", label: "App" },
   { href: "#como-funciona", label: "Como funciona" },
-  { href: "#sobre", label: "Sobre" },
   { href: "#contato", label: "Contato" },
 ] as const;

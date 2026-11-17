@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import { offerConfig } from "@/config/offer";
 import { siteConfig } from "@/config/site";
@@ -20,34 +19,7 @@ export async function Footer({ linkBase = "" }: { linkBase?: "" | "/" }) {
   const year = await currentYear();
 
   return (
-    <footer className="border-t border-line">
-      <div className="bg-white text-ink">
-        <div className="container-page py-14 text-center sm:py-16">
-          <h2 className="text-sm font-medium tracking-[0.04em] text-ink/70">Parceiros e Investidores</h2>
-          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-16 gap-y-10">
-            <li>
-              <Image
-                src="/brand/parceiro-rf-coworking.png"
-                alt="RF Co-working"
-                width={1318}
-                height={1711}
-                className="h-36 w-auto sm:h-40"
-              />
-            </li>
-            <li>
-              <Image
-                src="/brand/parceiro-botelho-castro.png"
-                alt="Botelho e Castro Consultores"
-                width={1095}
-                height={257}
-                className="h-14 w-auto sm:h-16"
-              />
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="surface-dark bg-ink">
+    <footer className="surface-dark bg-ink border-t border-white/10">
       <div className="container-page grid gap-14 py-16 sm:py-20 md:grid-cols-2 md:items-start md:gap-10">
         <div>
           <h2 className="text-xs font-semibold tracking-[0.18em] text-accent-bright uppercase">Planos</h2>
@@ -89,7 +61,6 @@ export async function Footer({ linkBase = "" }: { linkBase?: "" | "/" }) {
           </a>
           <CookieSettingsLink className="inline-block cursor-pointer py-2 hover:text-white hover:underline" />
         </p>
-      </div>
       </div>
     </footer>
   );

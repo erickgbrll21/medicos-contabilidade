@@ -79,12 +79,8 @@ export default function PrivacyPolicyPage() {
         <article className="container-page max-w-[48rem]">
           <h1 className="text-section">Política de Privacidade</h1>
           <p className="text-lead mt-6 text-muted">
-            Esta política explica como tratamos os dados enviados pela página de contabilidade para médicos. Ela
-            complementa a{" "}
-            <a href={siteConfig.officialPrivacyPolicy} target="_blank" rel="noopener noreferrer" className="text-ink underline">
-              política de privacidade do site institucional
-            </a>
-            .
+            Esta política explica como a Fechou Tributo trata os dados enviados pela página de contabilidade para
+            médicos.
           </p>
 
           <div className="mt-14 space-y-12">
