@@ -46,12 +46,12 @@ export function Header({ logo }: { logo: React.ReactNode }) {
   return (
     <header
       className={cn(
-        "surface-dark fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300",
-        scrolled || open ? "border-white/10" : "border-transparent",
+        "fixed inset-x-0 top-0 z-50 border-b bg-white text-ink transition-[border-color,box-shadow] duration-300",
+        scrolled || open ? "border-line shadow-[0_8px_24px_-18px_rgb(0_22_53/0.45)]" : "border-transparent",
       )}
     >
       <div className="container-page flex h-16 items-center justify-between gap-6 lg:h-[4.5rem]">
-        <a href="#inicio" className="shrink-0 rounded-sm" aria-label="BC Consultores — voltar ao início" onClick={close}>
+        <a href="#inicio" className="shrink-0 rounded-sm" aria-label="Fechou Tributo — voltar ao início" onClick={close}>
           {logo}
         </a>
 
@@ -61,7 +61,7 @@ export function Header({ logo }: { logo: React.ReactNode }) {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-[0.9375rem] text-white/70 transition-colors duration-200 hover:text-white"
+                  className="text-[0.9375rem] text-ink/70 transition-colors duration-200 hover:text-ink"
                 >
                   {link.label}
                 </a>
@@ -79,7 +79,7 @@ export function Header({ logo }: { logo: React.ReactNode }) {
           <button
             ref={toggleRef}
             type="button"
-            className="-mr-2 inline-flex size-12 items-center justify-center rounded-sm text-white lg:hidden"
+            className="-mr-2 inline-flex size-12 items-center justify-center rounded-sm text-ink lg:hidden"
             aria-expanded={open}
             aria-controls="menu-mobile"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -93,10 +93,10 @@ export function Header({ logo }: { logo: React.ReactNode }) {
       <div
         id="menu-mobile"
         hidden={!open}
-        className="surface-dark h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 lg:hidden"
+        className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-white lg:hidden"
       >
         <nav aria-label="Menu" className="container-page flex h-full flex-col pt-6 pb-[max(2rem,env(safe-area-inset-bottom))]">
-          <ul className="divide-y divide-white/10">
+          <ul className="divide-y divide-line">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href} onClick={close} className="font-display block py-5 text-[1.75rem] tracking-[-0.02em]">
@@ -109,7 +109,7 @@ export function Header({ logo }: { logo: React.ReactNode }) {
             <CtaLink trackingId="menu_mobile" onClick={close} className={buttonClasses("inverse", "lg")}>
               Fale com um especialista
             </CtaLink>
-            <WhatsAppLink trackingId="menu_mobile" onClick={close} className={buttonClasses("outline-light", "lg")}>
+            <WhatsAppLink trackingId="menu_mobile" onClick={close} className={buttonClasses("outline", "lg")}>
               <WhatsAppIcon className="size-5" />
               Conversar no WhatsApp
             </WhatsAppLink>

@@ -28,7 +28,7 @@ export function LeadForm() {
           <ol className="mt-10 space-y-4 border-t border-ink/15 pt-8">
             {nextSteps.map((step) => (
               <li key={step} className="flex gap-4 text-[1rem] leading-relaxed text-graphite">
-                <span aria-hidden="true" className="mt-[0.55em] size-2.5 shrink-0 rounded-tl-[3px] bg-ink" />
+                <span aria-hidden="true" className="mt-[0.55em] size-2.5 shrink-0 rounded-tl-[3px] bg-accent" />
                 {step}
               </li>
             ))}

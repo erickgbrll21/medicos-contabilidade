@@ -32,7 +32,7 @@ Contabilidade estratégica conduzida por uma consultoria com sede em Belo Horizo
 
 - Nunca prometer redução garantida de impostos: toda economia depende de análise individual e da legislação aplicável.
 - Não solicitar CPF, documentos pessoais ou dados clínicos de pacientes.
-- Condição comercial de referência (R$ 499/mês) é configurável e precisa ser confirmada pela empresa antes da publicação.
+- Planos exibidos na hero (R$ 199, R$ 299 e R$ 399/mês por 12 meses) ficam em `src/config/offer.ts` e precisam ser confirmados pela empresa antes da publicação.
 - LGPD: consentimento explícito obrigatório no formulário.
 
 ## Brand Commitments

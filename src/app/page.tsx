@@ -6,7 +6,6 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { About } from "@/components/sections/About";
 import { Hero } from "@/components/sections/Hero";
 import { LeadForm } from "@/components/sections/LeadForm";
-import { Pricing } from "@/components/sections/Pricing";
 import { Problem } from "@/components/sections/Problem";
 import { Process } from "@/components/sections/Process";
 import { Segmentation } from "@/components/sections/Segmentation";
@@ -25,7 +24,7 @@ const jsonLd = {
       url: siteConfig.url,
       sameAs: [siteConfig.officialSite],
       logo: `${siteConfig.url}/icon.png`,
-      image: `${siteConfig.url}/images/hero-medica.webp`,
+      image: `${siteConfig.url}/images/hero-medico.webp`,
       telephone: "+55-31-3295-0497",
       email: contact.email,
       address: {
@@ -66,7 +65,6 @@ export default function Home() {
         <Services />
         <Process />
         <Segmentation />
-        <Pricing />
         <About />
         <LeadForm />
       </main>

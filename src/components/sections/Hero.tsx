@@ -1,73 +1,93 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Rocket, Stethoscope } from "lucide-react";
+import { offerConfig } from "@/config/offer";
 import { buttonClasses } from "@/components/ui/Button";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
-
-const benefits = [
-  "Planejamento tributário estratégico",
-  "Contabilidade especializada para médicos",
-  "Segurança fiscal e jurídica",
-];
+import { HeroPlans } from "./HeroPlans";
 
 const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
 
 export function Hero() {
   return (
-    <section id="inicio" aria-labelledby="hero-title" className="surface-dark relative overflow-hidden pt-16 lg:pt-[4.5rem]">
-      <div className="container-page relative grid lg:min-h-[calc(100svh-4.5rem)] lg:grid-cols-12 lg:items-center">
-        <div className="relative z-10 pt-10 pb-12 sm:pt-16 lg:col-span-7 lg:py-24 lg:pr-12 xl:col-span-6 xl:pr-0">
-          <h1 id="hero-title" className="text-display animate-rise max-w-[13ch] font-light">
-            Sua carreira médica merece uma contabilidade à altura.
-          </h1>
-          <p className="text-lead animate-rise mt-6 max-w-[38rem] text-white/70 sm:mt-8" style={delay(120)}>
-            Reduza legalmente sua carga tributária, organize sua vida financeira e tenha uma contabilidade
-            estratégica especializada na realidade dos profissionais da saúde.
-          </p>
+    <section id="inicio" aria-labelledby="hero-title" className="surface-dark bg-ink relative overflow-hidden pt-16 lg:pt-[4.5rem]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 -right-40 size-[32rem] rounded-full bg-accent/15 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-0 h-40 w-72 bg-accent/80 [clip-path:polygon(0_35%,100%_100%,0_100%)]"
+      />
 
-          <div className="animate-rise mt-9 flex flex-col gap-3 sm:flex-row lg:grid lg:w-fit" style={delay(220)}>
-            <CtaLink
-              trackingId="hero_principal"
-              prefill={{ objetivo: "reduzir_impostos" }}
-              className={buttonClasses("inverse", "lg")}
+      <div className="container-page relative pb-14 sm:pb-20">
+        <div className="grid lg:grid-cols-12 lg:items-center lg:gap-10">
+          <div className="relative z-10 pt-10 sm:pt-14 lg:col-span-7 lg:pt-12 lg:pb-32">
+            <ul className="animate-rise flex flex-wrap gap-2.5" aria-label="Destaques">
+              <li className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-sm font-medium">
+                <Rocket className="size-4 text-accent-bright" strokeWidth={1.75} aria-hidden="true" />
+                {offerConfig.eyebrow}
+              </li>
+              <li className="inline-flex items-center gap-2 rounded-full bg-accent px-3.5 py-1.5 text-sm font-semibold text-ink">
+                <Stethoscope className="size-4" strokeWidth={2} aria-hidden="true" />
+                {offerConfig.highlight}
+              </li>
+            </ul>
+
+            <h1
+              id="hero-title"
+              className="animate-rise mt-7 max-w-[15ch] text-[clamp(2.375rem,1.6rem+3vw,4.25rem)] leading-[1.03] font-light tracking-[-0.03em]"
+              style={delay(100)}
             >
-              Quero pagar menos impostos
-              <ArrowRight className="size-[1.125rem] transition-transform duration-200 group-hover/btn:translate-x-0.5" strokeWidth={1.75} aria-hidden="true" />
-            </CtaLink>
-            <WhatsAppLink trackingId="hero_secundario" className={buttonClasses("outline-light", "lg")}>
-              <WhatsAppIcon className="size-[1.125rem]" />
-              Falar com um especialista
-            </WhatsAppLink>
+              A contabilidade feita para <span className="font-normal text-accent-bright">médicos</span>, sem
+              complicação.
+            </h1>
+            <p className="text-lead animate-rise mt-6 max-w-[36rem] text-white/75" style={delay(180)}>
+              Soluções contábeis completas para <strong className="font-semibold text-white">médicos, clínicas</strong> e{" "}
+              <strong className="font-semibold text-white">demais profissionais da saúde</strong>, com planos a partir de
+              R$ 199/mês.
+            </p>
+
+            <div className="animate-rise mt-9 flex flex-col gap-3 sm:flex-row" style={delay(260)}>
+              <CtaLink
+                trackingId="hero_principal"
+                prefill={{ objetivo: "contratar_contabilidade" }}
+                className={buttonClasses("inverse", "lg")}
+              >
+                Quero contratar
+                <ArrowRight className="size-[1.125rem] transition-transform duration-200 group-hover/btn:translate-x-0.5" strokeWidth={1.75} aria-hidden="true" />
+              </CtaLink>
+              <WhatsAppLink trackingId="hero_secundario" className={buttonClasses("outline-light", "lg")}>
+                <WhatsAppIcon className="size-[1.125rem]" />
+                Tirar dúvidas
+              </WhatsAppLink>
+            </div>
           </div>
 
-          <ul className="animate-rise mt-12 grid gap-4 sm:grid-cols-3 sm:gap-0 lg:mt-16" style={delay(320)} aria-label="Diferenciais">
-            {benefits.map((item) => (
-              <li
-                key={item}
-                className="border-l border-white/25 pl-4 text-[0.9375rem] leading-snug text-white/85 sm:pr-5"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+          <figure className="animate-rise relative mt-10 aspect-[4/3] sm:aspect-[16/10] lg:col-span-5 lg:mt-0 lg:aspect-[4/5] lg:self-end" style={delay(160)}>
+            <div className="absolute inset-0 overflow-hidden rounded-tr-[var(--radius-brand)] lg:rounded-none lg:[mask-composite:intersect] lg:[mask-image:linear-gradient(to_right,transparent,black_28%,black_82%,transparent),linear-gradient(to_bottom,transparent,black_22%,black_62%,transparent)]">
+              <Image
+                src="/images/hero-medico.webp"
+                alt="Médico de jaleco e estetoscópio sorrindo em seu consultório"
+                fill
+                preload
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover object-[60%_18%]"
+              />
+              <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink to-transparent lg:hidden" />
+            </div>
+            <figcaption className="absolute top-5 left-0 inline-flex items-center gap-2.5 rounded-r-full bg-white py-2.5 pr-5 pl-4 text-sm font-semibold text-ink shadow-[0_12px_30px_-12px_rgb(0_0_0/0.6)] lg:top-16 lg:-left-6 lg:rounded-full">
+              <span className="flex size-8 items-center justify-center rounded-full bg-accent">
+                <Stethoscope className="size-4 text-ink" strokeWidth={2} aria-hidden="true" />
+              </span>
+              Contabilidade 100% focada em médicos
+            </figcaption>
+          </figure>
         </div>
-      </div>
 
-      <figure className="relative mx-5 mb-10 aspect-[4/3] overflow-hidden rounded-bl-[var(--radius-brand)] sm:mx-8 lg:absolute lg:inset-y-0 lg:right-0 lg:top-[4.5rem] lg:m-0 lg:aspect-auto lg:w-[41%] xl:w-[46%]">
-        <Image
-          src="/images/hero-medica.webp"
-          alt="Médica de jaleco conversando com um colega em um consultório moderno"
-          fill
-          preload
-          sizes="(min-width: 1280px) 46vw, (min-width: 1024px) 41vw, 100vw"
-          className="object-cover object-[72%_35%]"
-        />
-        <div aria-hidden="true" className="absolute inset-y-0 left-0 hidden w-24 bg-gradient-to-r from-ink/60 to-transparent lg:block" />
-        <figcaption className="absolute bottom-0 left-0 max-w-[19rem] bg-ink px-5 py-4 text-sm leading-snug text-white/90 lg:bottom-10 lg:left-10 lg:rounded-tr-[1rem]">
-          Atendimento humano, sem robôs: você fala direto com um profissional da nossa equipe.
-        </figcaption>
-      </figure>
+        <HeroPlans className="animate-rise relative z-10 -mt-16 sm:-mt-24 lg:-mt-24" />
+      </div>
     </section>
   );
 }

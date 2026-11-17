@@ -34,6 +34,7 @@ export const siteConfig = {
 } as const;
 
 export const navLinks = [
+  { href: "#planos", label: "Planos" },
   { href: "#servicos", label: "Serviços" },
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#sobre", label: "Sobre" },

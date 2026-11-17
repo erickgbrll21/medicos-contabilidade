@@ -1,17 +1,25 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-/** Logo oficial (branca). Usar apenas sobre fundo escuro. */
-export function Logo({ className, preload }: { className?: string; preload?: boolean }) {
+/** `onLight` no header branco; `onDark` nas faixas navy (wordmark claro). */
+export function Logo({
+  className,
+  preload,
+  tone = "onLight",
+}: {
+  className?: string;
+  preload?: boolean;
+  tone?: "onLight" | "onDark";
+}) {
   return (
     <Image
-      src="/brand/logo-bcc-branco.png"
-      alt="BC Consultores — Botelho e Castro Consultores"
-      width={2447}
-      height={442}
-      sizes="220px"
+      src={tone === "onDark" ? "/brand/logo-fechou-tributo-fundo-escuro.png" : "/brand/logo-fechou-tributo.png"}
+      alt="Fechou Tributo — Contabilidade sem complicação"
+      width={1024}
+      height={340}
+      sizes="240px"
       preload={preload}
-      className={cn("h-8 w-auto sm:h-9", className)}
+      className={cn("h-11 w-auto sm:h-12", className)}
     />
   );
 }

@@ -7,10 +7,10 @@ const base =
   "group/btn inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[3px] font-medium tracking-[-0.005em] transition-[background-color,color,border-color,transform] duration-200 ease-out active:translate-y-px disabled:pointer-events-none disabled:opacity-60 select-none";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-ink text-white hover:bg-graphite",
-  inverse: "bg-white text-ink hover:bg-mist",
+  primary: "bg-accent text-ink hover:bg-accent-bright",
+  inverse: "bg-accent text-ink hover:bg-accent-bright",
   outline: "border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-white",
-  "outline-light": "border border-white/30 text-white hover:border-white hover:bg-white hover:text-ink",
+  "outline-light": "border border-white/30 text-white hover:border-accent hover:bg-accent hover:text-ink",
 };
 
 const sizes: Record<Size, string> = {

@@ -12,10 +12,10 @@ export async function Footer({ linkBase = "" }: { linkBase?: "" | "/" }) {
   const year = await currentYear();
 
   return (
-    <footer className="surface-dark border-t border-white/10">
+    <footer className="surface-dark bg-ink border-t border-white/10">
       <div className="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">
-          <Logo />
+          <Logo tone="onDark" />
           <p className="mt-6 text-[0.9375rem] leading-relaxed text-white/60">
             Contabilidade estratégica para médicos, com sede em Belo Horizonte e atuação em todo o Brasil.
           </p>

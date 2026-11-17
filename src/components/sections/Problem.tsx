@@ -31,7 +31,7 @@ export function Problem() {
           <ul className="border-b border-line">
             {situations.map((text, i) => (
               <Reveal as="li" key={text} className="flex items-start gap-5 border-t border-line py-6 sm:py-7">
-                <span aria-hidden="true" className="mt-[0.4em] w-6 shrink-0 text-sm tabular-nums text-stone">
+                <span aria-hidden="true" className="mt-[0.4em] w-6 shrink-0 text-sm font-medium tabular-nums text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="font-display text-[1.3125rem] leading-snug tracking-[-0.01em] text-graphite sm:text-[1.5rem]">

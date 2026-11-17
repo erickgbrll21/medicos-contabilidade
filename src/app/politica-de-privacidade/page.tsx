@@ -65,12 +65,12 @@ const sections = [
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <header className="surface-dark">
+      <header className="border-b border-line bg-white text-ink">
         <div className="container-page flex h-16 items-center justify-between lg:h-[4.5rem]">
-          <Link href="/" aria-label="BC Consultores — página inicial">
+          <Link href="/" aria-label="Fechou Tributo — página inicial">
             <Logo />
           </Link>
-          <Link href="/" className="inline-flex items-center gap-2 text-[0.9375rem] text-white/75 hover:text-white">
+          <Link href="/" className="inline-flex items-center gap-2 text-[0.9375rem] text-ink/75 hover:text-ink">
             <ArrowLeft className="size-4" strokeWidth={1.75} aria-hidden="true" />
             Voltar
           </Link>

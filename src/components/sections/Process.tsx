@@ -21,7 +21,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="como-funciona" aria-labelledby="processo-title" className="surface-dark py-24 sm:py-32">
+    <section id="como-funciona" aria-labelledby="processo-title" className="surface-dark bg-ink py-24 sm:py-32">
       <div className="container-page">
         <h2 id="processo-title" className="text-section max-w-[18ch]">
           Começar é mais simples do que você imagina.

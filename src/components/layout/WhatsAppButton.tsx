@@ -23,7 +23,7 @@ export function WhatsAppButton() {
       tabIndex={visible ? 0 : -1}
       aria-hidden={!visible}
       className={cn(
-        "fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 inline-flex h-14 items-center gap-2.5 rounded-full bg-ink pr-5 pl-4 text-white shadow-[0_10px_30px_-8px_rgb(0_0_0/0.45)] ring-1 ring-white/15 transition-[opacity,transform,background-color] duration-300 ease-out hover:bg-graphite sm:right-6 sm:bottom-6",
+        "fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 inline-flex h-14 items-center gap-2.5 rounded-full bg-accent pr-5 pl-4 text-ink shadow-[0_10px_30px_-8px_rgb(0_0_0/0.45)] ring-1 ring-white/15 transition-[opacity,transform,background-color] duration-300 ease-out hover:bg-accent-bright sm:right-6 sm:bottom-6",
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0",
       )}
     >
