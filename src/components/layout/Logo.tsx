@@ -19,7 +19,7 @@ export function Logo({
       height={340}
       sizes="280px"
       preload={preload}
-      className={cn("h-12 w-auto sm:h-14", className)}
+      className={cn("h-10 w-auto max-w-[46vw] sm:h-12 sm:max-w-none lg:h-14", className)}
     />
   );
 }

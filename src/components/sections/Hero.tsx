@@ -28,7 +28,7 @@ export function Hero() {
       <div className="container-page relative pb-14 sm:pb-20">
         <div className="grid lg:grid-cols-12 lg:items-center lg:gap-10">
           <div className="relative z-10 pt-10 sm:pt-14 lg:col-span-7 lg:pt-12 lg:pb-32">
-            <ul className="animate-rise flex flex-wrap gap-2.5" aria-label="Destaques">
+            <ul className="animate-rise flex flex-wrap gap-2" aria-label="Destaques">
               <li className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-4 py-2 text-sm font-medium backdrop-blur-md">
                 <Rocket className="size-4 text-accent-bright" strokeWidth={1.75} aria-hidden="true" />
                 {offerConfig.eyebrow}
@@ -41,7 +41,7 @@ export function Hero() {
 
             <h1
               id="hero-title"
-              className="animate-rise mt-7 max-w-[18ch] text-[clamp(2.125rem,1.4rem+2.4vw,3.75rem)] leading-[1.05] font-light tracking-[-0.03em] sm:max-w-[20ch]"
+              className="animate-rise mt-7 max-w-full text-[clamp(1.875rem,1.15rem+2.6vw,3.75rem)] leading-[1.08] font-light tracking-[-0.03em] sm:max-w-[20ch]"
               style={delay(100)}
             >
               A contabilidade feita para{" "}
@@ -60,19 +60,19 @@ export function Hero() {
               <CtaLink
                 trackingId="hero_principal"
                 prefill={{ objetivo: "contratar_contabilidade" }}
-                className={buttonClasses("inverse", "lg")}
+                className={buttonClasses("inverse", "lg", "w-full sm:w-auto")}
               >
                 Quero contratar
                 <ArrowRight className="size-[1.125rem] transition-transform duration-200 group-hover/btn:translate-x-0.5" strokeWidth={1.75} aria-hidden="true" />
               </CtaLink>
-              <WhatsAppLink trackingId="hero_secundario" className={buttonClasses("outline-light", "lg")}>
+              <WhatsAppLink trackingId="hero_secundario" className={buttonClasses("outline-light", "lg", "w-full sm:w-auto")}>
                 <WhatsAppIcon className="size-[1.125rem]" />
                 Tirar dúvidas
               </WhatsAppLink>
             </div>
           </div>
 
-          <figure className="animate-rise relative mt-10 aspect-[4/3] sm:aspect-[16/10] lg:col-span-5 lg:mt-0 lg:aspect-[4/5] lg:self-end" style={delay(160)}>
+          <figure className="animate-rise relative mt-8 aspect-[4/3] sm:mt-10 sm:aspect-[16/10] lg:col-span-5 lg:mt-0 lg:aspect-[4/5] lg:self-end" style={delay(160)}>
             <div className="absolute inset-0 overflow-hidden rounded-tr-[var(--radius-brand)] lg:rounded-none lg:[mask-composite:intersect] lg:[mask-image:linear-gradient(to_right,transparent,black_28%,black_82%,transparent),linear-gradient(to_bottom,transparent,black_22%,black_62%,transparent)]">
               <Image
                 src="/images/hero-medico.webp"
@@ -87,7 +87,7 @@ export function Hero() {
           </figure>
         </div>
 
-        <HeroPlans className="animate-rise relative z-10 -mt-16 sm:-mt-24 lg:-mt-24" />
+        <HeroPlans className="animate-rise relative z-10 mt-8 sm:-mt-16 lg:-mt-24" />
       </div>
     </section>
   );

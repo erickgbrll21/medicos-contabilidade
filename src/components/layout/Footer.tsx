@@ -50,7 +50,7 @@ export async function Footer({ linkBase = "" }: { linkBase?: "" | "/" }) {
         </div>
       </div>
 
-      <div className="container-page border-t border-white/10 py-6 pb-24 text-center text-sm leading-relaxed text-white/45 sm:pb-6">
+      <div className="container-page border-t border-white/10 py-6 pb-28 text-center text-sm leading-relaxed break-words text-white/45 sm:pr-44 sm:pb-8">
         <p>Todos os direitos reservados © {year} — {siteConfig.legalName}</p>
         <p className="mt-1">
           {contact.address.street}, {contact.address.district}, {contact.address.city}–{contact.address.state}

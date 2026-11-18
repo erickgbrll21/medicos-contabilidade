@@ -37,10 +37,10 @@ export function CookieNotice() {
           </Link>
         </p>
         <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-          <button type="button" className={buttonClasses("primary", "md")} onClick={() => writeConsent("accepted")}>
+          <button type="button" className={buttonClasses("primary", "md", "w-full sm:w-auto")} onClick={() => writeConsent("accepted")}>
             Aceitar
           </button>
-          <button type="button" className={buttonClasses("outline", "md")} onClick={() => writeConsent("rejected")}>
+          <button type="button" className={buttonClasses("outline", "md", "w-full sm:w-auto")} onClick={() => writeConsent("rejected")}>
             Recusar
           </button>
         </div>

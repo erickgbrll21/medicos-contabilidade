@@ -33,7 +33,7 @@ export function Problem() {
               <Reveal
                 as="li"
                 key={text}
-                className="group flex items-center gap-5 rounded-3xl border border-transparent bg-mist p-5 transition-[background-color,border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-ink/5 hover:bg-white hover:shadow-[0_18px_40px_-24px_rgb(0_22_53/0.25)] sm:p-6"
+                className="group flex items-start gap-4 rounded-3xl border border-transparent bg-mist p-4 transition-[background-color,border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-ink/5 hover:bg-white hover:shadow-[0_18px_40px_-24px_rgb(0_22_53/0.25)] sm:items-center sm:gap-5 sm:p-6"
               >
                 <span
                   aria-hidden="true"

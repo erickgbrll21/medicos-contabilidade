@@ -27,7 +27,7 @@ export function LeadForm() {
 
           <ol className="mt-10 space-y-3">
             {nextSteps.map((step, i) => (
-              <li key={step} className="flex items-center gap-4 rounded-2xl bg-white p-4 text-[1rem] leading-relaxed text-graphite shadow-[0_1px_2px_rgb(0_22_53/0.04)]">
+              <li key={step} className="flex items-start gap-4 rounded-2xl bg-white p-4 text-[1rem] leading-relaxed text-graphite shadow-[0_1px_2px_rgb(0_22_53/0.04)] sm:items-center">
                 <span aria-hidden="true" className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-accent text-sm font-semibold text-ink tabular-nums">
                   {i + 1}
                 </span>

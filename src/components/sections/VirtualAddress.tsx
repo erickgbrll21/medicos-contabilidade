@@ -39,7 +39,7 @@ export function VirtualAddress() {
         <CtaLink
           trackingId="endereco_virtual"
           prefill={{ objetivo: "contratar_contabilidade" }}
-          className={buttonClasses("primary", "lg", "mt-10")}
+          className={buttonClasses("primary", "lg", "mt-10 w-full sm:w-auto")}
         >
           Quero o endereço virtual
         </CtaLink>

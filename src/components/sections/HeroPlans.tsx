@@ -3,7 +3,7 @@ import { offerConfig, type Plan } from "@/config/offer";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { cn } from "@/lib/utils";
 
-const iconProps = { className: "size-8 text-accent", strokeWidth: 1.5, "aria-hidden": true } as const;
+const iconProps = { className: "size-6 text-accent sm:size-8", strokeWidth: 1.5, "aria-hidden": true } as const;
 
 function PlanIcon({ icon }: { icon: Plan["icon"] }) {
   if (icon === "address") {
@@ -25,7 +25,7 @@ function PlanCard({ plan }: { plan: Plan }) {
     <li
       className={cn(
         "group relative flex flex-col rounded-[1.75rem] bg-white p-5 text-ink shadow-[0_24px_48px_-24px_rgb(0_0_0/0.7)] transition-[transform,box-shadow] duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-1.5 hover:shadow-[0_32px_64px_-24px_rgb(100_175_7/0.55)] sm:p-6",
-        featured && "ring-2 ring-accent ring-offset-4 ring-offset-ink",
+        featured && "ring-2 ring-accent sm:ring-offset-4 sm:ring-offset-ink",
       )}
     >
       <div className="flex items-center justify-between gap-4">
@@ -69,7 +69,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         <div className="relative flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
           <p className="flex items-baseline gap-1 whitespace-nowrap">
             <span className="text-base font-medium">R$</span>
-            <span className="font-display text-[2.5rem] leading-none font-medium tracking-[-0.03em] tabular-nums">
+            <span className="font-display text-[2.25rem] leading-none font-medium tracking-[-0.03em] tabular-nums sm:text-[2.5rem]">
               {plan.price}
             </span>
             <span className="text-sm text-white/75">{plan.period}</span>
@@ -102,7 +102,7 @@ export function HeroPlans({ className }: { className?: string }) {
           <PlanCard key={plan.id} plan={plan} />
         ))}
       </ol>
-      <p className="mx-auto mt-6 flex w-fit items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.07] px-5 py-2.5 backdrop-blur-md text-[0.9375rem] font-medium text-white">
+      <p className="mx-auto mt-6 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-2.5 gap-y-1 rounded-full border border-white/15 bg-white/[0.07] px-4 py-2.5 text-center text-[0.9375rem] font-medium text-white backdrop-blur-md sm:px-5">
         <CalendarCheck className="size-5 text-accent-bright" strokeWidth={1.75} aria-hidden="true" />
         {offerConfig.footnote.lead}
         <span className="text-accent-bright">{offerConfig.footnote.highlight}</span>

@@ -52,7 +52,7 @@ export function Header({ logo }: { logo: React.ReactNode }) {
           : "border-transparent bg-white",
       )}
     >
-      <div className="container-page flex h-16 items-center justify-between gap-6 lg:h-[4.5rem]">
+      <div className="container-page flex h-16 items-center justify-between gap-3 sm:gap-6 lg:h-[4.5rem]">
         <a href="#inicio" className="shrink-0 rounded-sm" aria-label="Fechou Tributo — voltar ao início" onClick={close}>
           {logo}
         </a>
