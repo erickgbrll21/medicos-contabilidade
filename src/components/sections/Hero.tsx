@@ -26,22 +26,22 @@ export function Hero() {
       />
 
       <div className="container-page relative pb-14 sm:pb-20">
-        <div className="grid lg:grid-cols-12 lg:items-center lg:gap-10">
-          <div className="relative z-10 pt-10 sm:pt-14 lg:col-span-7 lg:pt-12 lg:pb-32">
-            <ul className="animate-rise flex flex-wrap gap-2" aria-label="Destaques">
-              <li className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-4 py-2 text-sm font-medium backdrop-blur-md">
-                <Rocket className="size-4 text-accent-bright" strokeWidth={1.75} aria-hidden="true" />
-                {offerConfig.eyebrow}
+        <div className="grid min-w-0 lg:grid-cols-12 lg:items-center lg:gap-10">
+          <div className="relative z-10 min-w-0 pt-10 sm:pt-14 lg:col-span-7 lg:pt-12 lg:pb-32">
+            <ul className="animate-rise flex flex-col items-start gap-2 sm:flex-row sm:flex-wrap" aria-label="Destaques">
+              <li className="flex w-fit max-w-full items-start gap-2 rounded-2xl border border-white/15 bg-white/[0.07] px-3.5 py-2 text-sm leading-snug font-medium backdrop-blur-md">
+                <Rocket className="mt-0.5 size-4 shrink-0 text-accent-bright" strokeWidth={1.75} aria-hidden="true" />
+                <span className="min-w-0 text-balance">{offerConfig.eyebrow}</span>
               </li>
-              <li className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-ink shadow-[0_8px_24px_-10px_rgb(100_175_7/0.8)]">
-                <Stethoscope className="size-4" strokeWidth={2} aria-hidden="true" />
-                {offerConfig.highlight}
+              <li className="flex w-fit max-w-full items-start gap-2 rounded-2xl bg-accent px-3.5 py-2 text-sm leading-snug font-semibold text-ink shadow-[0_8px_24px_-10px_rgb(100_175_7/0.8)]">
+                <Stethoscope className="mt-0.5 size-4 shrink-0" strokeWidth={2} aria-hidden="true" />
+                <span className="min-w-0 text-balance">{offerConfig.highlight}</span>
               </li>
             </ul>
 
             <h1
               id="hero-title"
-              className="animate-rise mt-7 max-w-full text-[clamp(1.875rem,1.15rem+2.6vw,3.75rem)] leading-[1.08] font-light tracking-[-0.03em] sm:max-w-[20ch]"
+              className="animate-rise mt-7 max-w-full text-[clamp(1.75rem,1.2rem+2.2vw,3.75rem)] leading-[1.12] font-light tracking-[-0.03em] text-balance sm:max-w-[20ch]"
               style={delay(100)}
             >
               A contabilidade feita para{" "}
@@ -50,7 +50,7 @@ export function Hero() {
               </span>
               , sem complicação.
             </h1>
-            <p className="text-lead animate-rise mt-6 max-w-[36rem] text-white/75" style={delay(180)}>
+            <p className="text-lead animate-rise mt-6 max-w-full text-pretty text-white/75 sm:max-w-[36rem]" style={delay(180)}>
               Soluções contábeis completas para <strong className="font-semibold text-white">médicos, clínicas</strong> e{" "}
               <strong className="font-semibold text-white">demais profissionais da saúde</strong>, com planos a partir de
               R$ 199/mês.
@@ -72,8 +72,8 @@ export function Hero() {
             </div>
           </div>
 
-          <figure className="animate-rise relative mt-8 aspect-[4/3] sm:mt-10 sm:aspect-[16/10] lg:col-span-5 lg:mt-0 lg:aspect-[4/5] lg:self-end" style={delay(160)}>
-            <div className="absolute inset-0 overflow-hidden rounded-tr-[var(--radius-brand)] lg:rounded-none lg:[mask-composite:intersect] lg:[mask-image:linear-gradient(to_right,transparent,black_28%,black_82%,transparent),linear-gradient(to_bottom,transparent,black_22%,black_62%,transparent)]">
+          <figure className="animate-rise relative mt-8 aspect-[4/3] overflow-hidden rounded-[1.25rem] sm:mt-10 sm:aspect-[16/10] lg:col-span-5 lg:mt-0 lg:aspect-[4/5] lg:self-end lg:overflow-visible lg:rounded-none" style={delay(160)}>
+            <div className="absolute inset-0 overflow-hidden rounded-[1.25rem] lg:rounded-none lg:[mask-composite:intersect] lg:[mask-image:linear-gradient(to_right,transparent,black_28%,black_82%,transparent),linear-gradient(to_bottom,transparent,black_22%,black_62%,transparent)]">
               <Image
                 src="/images/hero-medico.webp"
                 alt="Médico de jaleco e estetoscópio sorrindo em seu consultório"
@@ -82,7 +82,7 @@ export function Hero() {
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover object-[60%_18%]"
               />
-              <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink to-transparent lg:hidden" />
+              <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-ink to-transparent lg:hidden" />
             </div>
           </figure>
         </div>

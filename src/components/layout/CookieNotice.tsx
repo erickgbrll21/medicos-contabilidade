@@ -19,28 +19,28 @@ export function CookieNotice() {
   if (consent) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[70] p-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:p-6">
+    <div className="fixed inset-x-0 bottom-0 z-[70] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:p-6">
       <div
         role="dialog"
         aria-labelledby="aviso-cookies-titulo"
         aria-describedby="aviso-cookies-texto"
-        className="max-w-xl rounded-[1.75rem] border border-ink/10 bg-white p-5 text-ink shadow-[0_24px_50px_-12px_rgb(0_0_0/0.45)] sm:p-6"
+        className="mx-auto max-w-xl rounded-2xl border border-ink/10 bg-white p-4 text-ink shadow-[0_24px_50px_-12px_rgb(0_0_0/0.45)] sm:rounded-[1.75rem] sm:p-6"
       >
-        <h2 id="aviso-cookies-titulo" className="text-base font-semibold tracking-[-0.01em]">
+        <h2 id="aviso-cookies-titulo" className="text-sm font-semibold tracking-[-0.01em] sm:text-base">
           Aviso de cookies
         </h2>
-        <p id="aviso-cookies-texto" className="mt-2 text-sm leading-relaxed text-muted">
+        <p id="aviso-cookies-texto" className="mt-1.5 text-[0.8125rem] leading-snug text-muted sm:mt-2 sm:text-sm sm:leading-relaxed">
           Usamos cookies para medir o desempenho desta página e lembrar a origem da sua visita. A medição só começa se
           você aceitar.{" "}
           <Link href="/politica-de-privacidade" className="font-medium text-ink underline">
             Política de Privacidade
           </Link>
         </p>
-        <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-          <button type="button" className={buttonClasses("primary", "md", "w-full sm:w-auto")} onClick={() => writeConsent("accepted")}>
+        <div className="mt-3 flex gap-2 sm:mt-4">
+          <button type="button" className={buttonClasses("primary", "md", "flex-1 sm:flex-none")} onClick={() => writeConsent("accepted")}>
             Aceitar
           </button>
-          <button type="button" className={buttonClasses("outline", "md", "w-full sm:w-auto")} onClick={() => writeConsent("rejected")}>
+          <button type="button" className={buttonClasses("outline", "md", "flex-1 sm:flex-none")} onClick={() => writeConsent("rejected")}>
             Recusar
           </button>
         </div>
