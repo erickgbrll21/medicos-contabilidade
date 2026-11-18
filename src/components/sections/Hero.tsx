@@ -41,15 +41,14 @@ export function Hero() {
 
             <h1
               id="hero-title"
-              className="animate-rise mt-7 max-w-[15ch] text-[clamp(2.375rem,1.6rem+3vw,4.25rem)] leading-[1.03] font-light tracking-[-0.03em]"
+              className="animate-rise mt-7 max-w-[18ch] text-[clamp(2.125rem,1.4rem+2.4vw,3.75rem)] leading-[1.05] font-light tracking-[-0.03em] sm:max-w-[20ch]"
               style={delay(100)}
             >
               A contabilidade feita para{" "}
               <span className="bg-gradient-to-r from-accent-bright to-[#c8f560] bg-clip-text font-normal text-transparent">
-                médicos
+                profissionais da saúde e profissionais liberais
               </span>
-              , sem
-              complicação.
+              , sem complicação.
             </h1>
             <p className="text-lead animate-rise mt-6 max-w-[36rem] text-white/75" style={delay(180)}>
               Soluções contábeis completas para <strong className="font-semibold text-white">médicos, clínicas</strong> e{" "}
